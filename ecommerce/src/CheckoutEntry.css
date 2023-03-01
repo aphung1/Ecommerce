@@ -1,0 +1,33 @@
+.CheckoutEntry {
+    display: flex;
+    width:auto;
+    max-height: 10rem;
+    height: 100%;
+    border-top: 1px solid lightgray;
+    margin: 1rem 2rem 1rem 2rem;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+}
+
+
+.CheckoutEntry img {
+    height: 100%;
+    object-fit: contain;
+    flex: 1;
+}
+
+.CheckoutEntry__text {
+    flex: 4;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.CheckoutEntry__text__left {
+    flex-basis: 75%;
+}
+
+.CheckoutEntry__text__right {
+    flex-basis:content;
+}

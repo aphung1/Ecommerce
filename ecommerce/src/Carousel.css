@@ -1,0 +1,87 @@
+.carousel {
+    height: 600px;
+    background-size: cover;
+}
+.carousel__inner {
+    height: 100%;
+    display:flex;
+    align-items: center;
+}
+
+.carousel__left {
+    height: 100%;
+    flex: 5%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.carousel__center {
+    flex: 90%;
+    height: 100%;
+    align-items: flex-end;
+    display: flex;
+    position:relative;
+}
+
+.carousel__center .carousel__caption {
+    position: absolute;
+    top: 170px;
+    left: 50px;
+    max-width: 250px;
+}
+
+.carousel__center .carousel__captionTitle {
+    color: white;
+    font-weight: 400;
+    font-size: 40px;
+    text-shadow: 1px 2px 5px #000000;
+}
+.carousel__center .carousel__captionSubtitle {
+    color: white;
+    font-weight: 300;
+    font-size: 25px;
+    text-shadow: 1px 2px 5px #000000;
+}
+.carousel__center .carousel__captionButton {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 100;
+    border: none;
+    padding: 12px 10px;
+}
+
+.carousel__center .carousel__slideMarkers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    transform: scale(0.6);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.carousel__right {
+    height: 100%;
+    flex: 5%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.carousel__activeMarker {
+    margin: 0 20px;
+}
+.carousel__inactiveMarker {
+    margin: 0 4px;
+    cursor: pointer;
+}
+
+.backArrow {
+    color: white;
+}
+
+.forwardArrow {
+    color: white;
+}
