@@ -1,6 +1,8 @@
 .checkout {
     padding: 1rem;
     margin: 0 1rem 0 1rem;
+    border-top: 1px solid lightgray;
+
 }
 
 .checkout__body {
