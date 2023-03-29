@@ -1,18 +1,33 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
 import "./SignUp.css";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setEmailError("");
+    setPasswordError("");
     try {
       const res = await fetch("/auth/signup", {
         method: "POST",
         body: JSON.stringify({ email, password }),
         headers: { "Content-Type": "application/json " },
       });
+      const data = await res.json();
+      if (data.error) {
+        setEmailError(data.error.email);
+        setPasswordError(data.error.password);
+      }
+      if (data.id) {
+        navigate("/");
+      }
     } catch (err) {
       console.log(err);
     }
@@ -20,11 +35,10 @@ const SignUp = () => {
 
   return (
     <div className="SignUp">
-      <h2>Sign Up</h2>
       <form className="SignUp__form" onSubmit={handleSubmit}>
+        <h2>Sign Up</h2>
         <label>
-          Email Address
-          <br />
+          Email Address: &nbsp;
           <input
             name="email"
             type="email"
@@ -34,8 +48,14 @@ const SignUp = () => {
           />
         </label>
         <br />
+        {emailError && (
+          <React.Fragment>
+            <p className="SignUp__form__error">{emailError}</p>
+            <br />
+          </React.Fragment>
+        )}
         <label>
-          Password <br />
+          Password: &nbsp;
           <input
             type="password"
             required
@@ -45,7 +65,15 @@ const SignUp = () => {
           />
         </label>
         <br />
+        {passwordError && (
+          <React.Fragment>
+            <p className="SignUp__form__error">{passwordError}</p>
+            <br />
+          </React.Fragment>
+        )}
         <input type="submit" value="Create an Account" />
+        <br />
+        Already have an account? <Link to="/login">Log In</Link>
       </form>
     </div>
   );

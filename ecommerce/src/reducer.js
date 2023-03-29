@@ -1,6 +1,6 @@
 export const initialState = {
     basket: [],
-    user: null,
+    user: "",
     basket_count: 0
   };
   
@@ -34,6 +34,8 @@ export const initialState = {
             }
             return {...state, basket: newBasket, basket_count: state.basket_count - Number(oldQuantity) + Number(action.item.quantity)}
           }
+          case "CHANGE_USER":
+            return {...state, user: action.id}
       default:
         console.log("defualt")
         return state;

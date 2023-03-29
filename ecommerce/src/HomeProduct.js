@@ -2,7 +2,7 @@ import React from "react";
 import StarIcon from "@mui/icons-material/Star";
 import StarHalfIcon from "@mui/icons-material/StarHalf";
 import "./HomeProduct.css";
-import { useStateValue } from "./StateProvider";
+import { useStateValue } from "./context/StateProvider";
 
 const HomeProduct = ({ id, title, img, price, rating }) => {
   const [{ basket }, dispatch] = useStateValue();

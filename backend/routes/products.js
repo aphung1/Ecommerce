@@ -1,7 +1,9 @@
 import express from 'express';
 import Product from '../models/product.js';
+import authentication from '../middleware/authentication.js';
 
 const productRouter = express.Router();
+productRouter.use(authentication);
 
 productRouter.get("/featured", async (req, res) => {
     const products = await Product.find({featured: true});

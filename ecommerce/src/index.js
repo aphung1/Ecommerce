@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import reducer, { initialState } from "./reducer";
-import { StateProvider } from "./StateProvider";
+import { StateProvider } from "./context/StateProvider";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

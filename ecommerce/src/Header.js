@@ -4,7 +4,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
-import { useStateValue } from "./StateProvider";
+import { useStateValue } from "./context/StateProvider";
 import "./Header.css";
 
 const Header = () => {

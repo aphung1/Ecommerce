@@ -9,3 +9,12 @@ label {
     margin: 1rem 0 1rem 0;
 }
 
+.SignUp__form {
+    border: 1px solid lightgray;
+    display: inline-block;
+    padding: 2rem;
+}
+
+.SignUp__form__error {
+    color: red;
+}

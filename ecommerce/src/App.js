@@ -5,6 +5,8 @@ import Checkout from "./Checkout";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { light } from "@mui/material/styles/createPalette";
 import SignUp from "./SignUp";
+import Login from "./Login";
+import RequireAuth from "./RequireAuth";
 
 function App() {
   return (
@@ -12,9 +14,12 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/signUp" element={<SignUp />} />
           <Route path="/" element={<Home />} />
+          <Route path="" element={<RequireAuth />}>
+            <Route path="/checkout" element={<Checkout />} />
+          </Route>
+          <Route path="/signUp" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </BrowserRouter>
